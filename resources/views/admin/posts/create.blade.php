@@ -1,6 +1,9 @@
-<form action="" method="post">
+<h1>Fazer mnova postagem</h1>
+
+<form action="{{ route('posts.store') }}" method="post">
   <label for="title">Título</label>
   <input type="text" name="title" id="title" placeholder="Título">
   <label for="postagem">Postagem</label>
-  <input type="textarea" name="postagem" id="postagem" placeholder="Digite sua postagem aqui">
+  <textarea name="postagem" id="postagem" cols="30" rows="4" placeholder="Conteúdo da postagem"></textarea>
+  <button type="submit">Enviar</button>
 </form>

@@ -5,9 +5,10 @@ use App\Http\Controllers\{
   PostController
 };
 
-Route::group(['prefix'=>'posts'], function(){
-  Route::get('/create',[PostController::class, 'index'])->name('posts.create');
-  Route::get('', [PostController::class, 'index'])->name('posts.name');
+Route::group(['prefix'=>'posts', 'as'=>'posts.'], function(){
+  Route::get('', [PostController::class, 'index'])->name('index');
+  Route::get('/create',[PostController::class, 'create'])->name('create');
+  Route::post('', [PostController::class, 'store'])->name('store');
 });
 
 
