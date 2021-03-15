@@ -5,6 +5,7 @@ use App\Http\Controllers\{
   PostController
 };
 
+// Grupo com prefixo 'posts' para as rotas e com o as 'posts.' para os nomes
 Route::group(['prefix'=>'posts', 'as'=>'posts.'], function(){
   Route::get('', [PostController::class, 'index'])->name('index');
   Route::get('/create',[PostController::class, 'create'])->name('create');
