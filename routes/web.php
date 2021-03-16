@@ -16,6 +16,8 @@ Route::group(['prefix'=>'posts', 'as'=>'posts.'], function(){
   Route::post('', [PostController::class, 'store'])->name('store');
   //Rota para deletar post
   Route::delete('/{id}', [PostController::class, 'destroy'])->name('destroy');
+  //Rota para atualizar os posts editados
+  Route::put('/{id}', [PostController::class, 'update'])->name('update');
   
 
 });
