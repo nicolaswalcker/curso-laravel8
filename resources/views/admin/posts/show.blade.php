@@ -6,14 +6,12 @@
 
 @section('content')
 <div class="show-container">
-  <h1>{{ $post->title }}</h1>
-
-  <section>
+  <article>
+    <h1>{{ $post->title }}</h1>
     <p>
       {{ $post->content }}
     </p>
-  </section>
-
+  </article>
   <form action="{{ route('posts.destroy', $post->id) }}" method="post">
     @csrf
     <input type="hidden" name="_method" value="delete">
