@@ -1,19 +1,17 @@
-<h1>Editar postagem</h1>
+@extends('admin.layouts.template')
 
-@if($errors->any())
-  <ul>
-    @foreach($errors->all() as $error)
-      <li>{{ $error }}</li>
-    @endforeach
-  </ul>
-@endif
+@section('titulo')
+  Edit | {{ $post->title }}  
+@endsection
 
-<form action="{{ route('posts.update', $post->id) }}" method="post">
-  @csrf
-  @method('put')
-  <label for="title">Título</label>
-  <input type="text" name="title" id="title" placeholder="Título" value='{{ $post->title }}'>
-  <label for="content">Postagem</label>
-  <textarea name="content" id="content" cols="30" rows="4" placeholder="Conteúdo da postagem">{{ $post->content }}</textarea>
-  <button type="submit">Enviar</button>
-</form>
+@section('content')
+<div class="edit-container">
+  <h1>Editar postagem</h1>
+
+  <form action="{{ route('posts.update', $post->id) }}" method="post">
+    @method('put')
+    @include('admin.posts._partials.form')
+  </form>
+  @endsection
+</div>
+ 
