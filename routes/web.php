@@ -7,6 +7,7 @@ use App\Http\Controllers\{
 
 // Grupo com prefixo 'posts' para as rotas e com o as 'posts.' para os nomes
 Route::group(['prefix'=>'posts', 'as'=>'posts.'], function(){
+  Route::any('/search', [PostController::class, 'search'])->name('search');
   Route::get('', [PostController::class, 'index'])->name('index');
   //Geralmente, é melhor deixar a rota de "create" a cima da rota "show"
   Route::get('/create',[PostController::class, 'create'])->name('create');

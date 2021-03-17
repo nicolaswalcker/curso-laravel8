@@ -4,6 +4,13 @@
   <p>{{ session('message') }}</p>
 @endif
 
+<form action="{{ route('posts.search') }}" method="post">
+  @csrf
+  <label for="search"></label>
+  <input type="text" name="search" placeholder="Filtrar">
+  <button type="submit">Pesquisar</button>
+</form>
+
 <br>
 <h1>Posts</h1>
 
@@ -12,4 +19,9 @@
   <p>{{ $post->content }} <span><a href="{{ route('posts.show', $post->id) }}">Ler mais</a></span> </p>
 @endforeach
 
-{{ $posts->links() }}
+@if(isset($filters))
+  {{ $posts->appends($filters)->links() }}
+@else
+  { $posts->links() }}
+@endif
+
