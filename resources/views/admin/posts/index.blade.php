@@ -11,3 +11,5 @@
   <h3>{{ $post->title }}</h3>
   <p>{{ $post->content }} <span><a href="{{ route('posts.show', $post->id) }}">Ler mais</a></span> </p>
 @endforeach
+
+{{ $posts->links() }}
