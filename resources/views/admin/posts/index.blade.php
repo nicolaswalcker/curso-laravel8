@@ -21,7 +21,9 @@
   @foreach($posts as $post)
   <article>
     <h3>{{ $post->title }}</h3>
-    <p>{{ $post->content }} <span><a href="{{ route('posts.show', $post->id) }}">Ler mais</a></span> </p>
+    <p>{{ Str::limit($post->content ?? '', 300,'...') }}
+      <span><a href="{{ route('posts.show', $post->id) }}">
+      Ler mais</a></span></p>
   </article>
   @endforeach
 
