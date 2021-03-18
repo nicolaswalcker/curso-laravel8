@@ -38,7 +38,7 @@ class PostController extends Controller
       $post->delete();
       return redirect()
       ->route('posts.index')
-      ->with('message', 'Post deletado');
+      ->with('message', "Post {$post->title} deletado");
     }
 
     public function edit($id){
@@ -58,7 +58,7 @@ class PostController extends Controller
 
       return redirect()
       ->route('posts.index')
-      ->with('message', 'Post editado');
+      ->with('message', "Post {$post->title} editado");
     }
 
     public function search(Request $request){
@@ -66,6 +66,7 @@ class PostController extends Controller
       $filters = $request->except('_token');
       $posts = Post::where('title', 'LIKE', "%{$request->search}%")
         ->orWhere('content', 'LIKE', "%{$request->search}%")
+        ->latest()
         ->paginate();
 
       return view('admin.posts.index', compact('posts', 'filters'));

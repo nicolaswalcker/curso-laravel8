@@ -106,3 +106,64 @@ body .index-container h1 {
   color: var(--white);
   font-weight: 600;
 }
+
+body .index-container > a{
+  color: var(--light-green);
+  font-weight: 600;
+  padding: 0.25rem;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 1rem 0;
+}
+
+body .index-container > a:hover {
+  border-bottom: 2px solid var(--light-green);
+}
+
+body .index-container .notify-message {
+  color: var(--white);
+  margin-bottom: .50rem;
+  font-size: .75rem;
+}
+
+body .index-container .filter-form {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+
+body .index-container .filter-form input {
+  border: none;
+  width: 150px;
+  height: 20px;
+  padding: .75rem; 
+  border-radius: 5px;
+}
+
+body .index-container .filter-form button {
+  border: 1px solid var(--light-blue);
+  margin-left: .75rem;
+  width: 90px;
+  height: 20px;
+  padding: 0.75rem;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  border-radius: 5px;
+  background: none;
+  cursor: pointer;
+  color: var(--white);
+  font-weight: 600;
+  transition: all .2s;
+}
+
+body .index-container .filter-form button:hover{
+  background: var(--light-blue);
+  transition: all .2s;
+}
+

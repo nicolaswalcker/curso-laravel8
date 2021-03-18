@@ -7,14 +7,13 @@
 
 <div class="index-container">
   <h1>Posts</h1>
-  <a href="{{ route('posts.create') }}">Criar novo</a>
+  <a href="{{ route('posts.create') }}">+ Criar novo</a>
   @if (session('message'))
-    <p>{{ session('message') }}</p>
+    <p class="notify-message">{{ session('message') }}</p>
   @endif
 
-  <form action="{{ route('posts.search') }}" method="post">
+  <form class="filter-form" action="{{ route('posts.search') }}" method="post">
     @csrf
-    <label for="search"></label>
     <input type="text" name="search" placeholder="Filtrar">
     <button type="submit">Pesquisar</button>
   </form>
