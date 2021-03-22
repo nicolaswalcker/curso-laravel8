@@ -7,6 +7,7 @@
 @section('content')
 <div class="show-container">
   <article>
+    <img src="{{ url("storage/{$post->image}") }}" alt="{{ $post->title }}">
     <h1>{{ $post->title }}</h1>
     <p>
       {{ $post->content }}

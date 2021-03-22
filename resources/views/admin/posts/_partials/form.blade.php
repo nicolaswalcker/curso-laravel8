@@ -9,6 +9,7 @@
 
 <div class="form-template">
   @csrf
+  <input type="file" name="image" id="image">
   <label for="title">Título</label>
   <input type="text" name="title" id="title" placeholder="Título" value='{{ $post->title ?? old('title') }}'>
   <label for="content">Postagem</label>

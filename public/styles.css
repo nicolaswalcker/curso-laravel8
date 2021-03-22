@@ -326,3 +326,11 @@ form ul li {
   color: var(--white);
 }
 
+.index-container img {
+  max-width: 100px;
+}
+
+.show-container img{
+  border-radius: 5px;
+  max-width: 500px;
+}

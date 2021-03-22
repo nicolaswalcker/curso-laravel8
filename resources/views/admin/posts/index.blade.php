@@ -20,6 +20,7 @@
 
   @foreach($posts as $post)
   <article>
+    <img src="{{ url("storage/{$post->image}") }}" alt="{{ $post->title }}">
     <h3>{{ $post->title }}</h3>
     <p>{{ Str::limit($post->content ?? '', 300,'...') }}
       <span><a href="{{ route('posts.show', $post->id) }}">
